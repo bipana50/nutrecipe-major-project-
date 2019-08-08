@@ -1,0 +1,20 @@
+<% include partials/header.ejs %>
+<div class="container">
+    <h2 class="topic">Your Calorie Chart:</h2>
+    <ol>
+<% usercalorie.forEach(function(usercalorie){ %>
+   
+    <div class="container">
+        <li>
+   <p>CALORIES:<%= usercalorie.calories %></p>
+   <p style="font-style: italic;">DATE:<%= usercalorie.date.toString().substring(0,25) %></p>
+   </li>
+   </div>
+   <hr>
+   <br>
+   
+<% }); %>
+    </ol>
+</div>
+<% include partials/footer.ejs %>
+
