@@ -38,6 +38,7 @@ function doPredict(value) {
         var tag = response.rawData.outputs[0].data.concepts[0].name;
         var url = 'http://api.wolframalpha.com/v2/query?input='+tag+'%20nutrition%20facts&appid='+myWolframAppId;
         console.log(tag);
+        $('.tagkey').html("<h4>The food is: "+ tag + "</h4>");
         getNutritionalInfo(url, function (result) {
           $('#concepts').html('<h3>'+ tag + '</h3>'+ "<img height='800' width='100%' src='"+result+"'>");
           $('.recipeclass').html("<button id='clickplace' class='btn btn-success btn-lg btn-block'>Show recipe</button>");
